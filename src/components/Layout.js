@@ -26,7 +26,7 @@ class Layout extends Component {
     return (
       <Fragment>
         <Header />
-        <button onClick={this.testRedux}>Test redux action</button>{" "}
+        <button onClick={this.testRedux}>Test redux action</button>
         <div className="app">
           <Navigation />
           <Content />
