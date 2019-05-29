@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import { testRedux } from "../actions/testRedux";
+import { testReduxAction } from "../actions/testRedux";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -10,7 +10,7 @@ import Content from "./Content";
 import "../App.css";
 
 const mapDispatchToProps = dispatch => ({
-  testRedux: () => dispatch(testRedux())
+  testRedux: () => dispatch(testReduxAction())
 });
 
 const mapStateToProps = state => ({
