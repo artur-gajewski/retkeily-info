@@ -1,9 +1,9 @@
 import React from "react";
 
-import Layout from "./components/Layout";
+import Front from "./components/pages/Front";
 
 function App() {
-  return <Layout />;
+  return <Front />;
 }
 
 export default App;

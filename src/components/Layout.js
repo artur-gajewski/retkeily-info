@@ -1,21 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import { testReduxAction } from "../actions/testRedux";
-
 import Header from "./Header";
 import Navigation from "./Navigation";
-import Content from "./Content";
 
 import "../App.css";
-
-const mapDispatchToProps = dispatch => ({
-  testRedux: () => dispatch(testReduxAction())
-});
-
-const mapStateToProps = state => ({
-  ...state
-});
 
 class Layout extends Component {
   testRedux = event => {
@@ -26,17 +15,13 @@ class Layout extends Component {
     return (
       <Fragment>
         <Header />
-        <button onClick={this.testRedux}>Test redux action</button>
         <div className="app">
           <Navigation />
-          <Content />
+          {this.props.children}
         </div>
       </Fragment>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Layout);
+export default connect()(Layout);
