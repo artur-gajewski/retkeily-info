@@ -3,13 +3,22 @@ import { connect } from "react-redux";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
+import { getUserAndLogin } from "../actions/account";
 
 import "./Layout.css";
 
+const mapDispatchToProps = dispatch => ({
+  getUserAndLogin: () => dispatch(getUserAndLogin())
+});
+
+const mapStateToProps = state => ({
+  ...state
+});
+
 class Layout extends Component {
-  testRedux = event => {
-    this.props.testRedux();
-  };
+  componentDidMount() {
+    this.props.getUserAndLogin();
+  }
 
   render() {
     return (
@@ -24,4 +33,7 @@ class Layout extends Component {
   }
 }
 
-export default connect()(Layout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

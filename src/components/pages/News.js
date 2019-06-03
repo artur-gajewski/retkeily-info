@@ -21,7 +21,7 @@ class Front extends Component {
     return (
       <Layout>
         <article>
-          <h3>Uutiset</h3>
+          <h3>Tiedotteet</h3>
           <div className="card">
             <button onClick={this.testRedux}>Test redux action</button>
           </div>

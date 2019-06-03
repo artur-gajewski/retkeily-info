@@ -16,12 +16,21 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 20px;
   margin-top: 10px;
+}
+
+h4 {
+  margin-top: 0px;
 }
 
 header {
@@ -72,6 +81,11 @@ header .settings {
   justify-content: flex-end;
 }
 
+header .account-picture {
+  width: 40px;
+  height: 40px;
+}
+
 .menu-button {
   display: flex;
   align-items: center;
@@ -94,7 +108,7 @@ header .settings {
 
 nav {
   background: #faf9f8;
-  flex: 0 0 256px;
+  flex: 0 0 210px;
   overflow: auto;
   order: 0;
   border-right: 1px solid #d9d9d9;
@@ -161,6 +175,7 @@ article {
   width: 100%;
   min-height: 200px;
   margin: 0 auto;
+  padding: 20px;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
 }
