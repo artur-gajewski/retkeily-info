@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store";
 
 import Front from "./components/pages/Front";
+import Login from "./components/pages/Login";
 import News from "./components/pages/News";
 import PageNotFound from "./components/pages/NotFound";
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={Front} />
         <Route path="/news" exact component={News} />
+        <Route path="/login" exact component={Login} />
         <Route component={PageNotFound} />
       </Switch>
     </Router>
