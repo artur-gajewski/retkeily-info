@@ -1,56 +1,73 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navigation() {
   return (
     <nav>
       <ul>
         <li>
-          <div className="navLink">
-            <i className="material-icons">home</i>
-            <span>Etusivu</span>
-          </div>
+          <Link to="/">
+            <div className="navLink">
+              <i className="material-icons">home</i>
+              <span>Etusivu</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">assignment</i>
-            <span>Tiedotteet</span>
-          </div>
+          <Link to="/news">
+            <div className="navLink">
+              <i className="material-icons">assignment</i>
+              <span>Tiedotteet</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">location_on</i>
-            <span>Ilmoita sijaintisi</span>
-          </div>
+          <Link to="/me">
+            <div className="navLink">
+              <i className="material-icons">location_on</i>
+              <span>Ilmoita sijaintisi</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">event_available</i>
-            <span>Tapahtumat</span>
-          </div>
+          <Link to="/events">
+            <div className="navLink">
+              <i className="material-icons">event_available</i>
+              <span>Tapahtumat</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">people</i>
-            <span>Kaverilista</span>
-          </div>
+          <Link to="/friends">
+            <div className="navLink">
+              <i className="material-icons">people</i>
+              <span>Kaverilista</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">bookmark</i>
-            <span>Suosikit</span>
-          </div>
+          <Link to="/favorites">
+            <div className="navLink">
+              <i className="material-icons">bookmark</i>
+              <span>Suosikit</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">person</i>
-            <span>Kirjaudu sisään</span>
-          </div>
+          <Link to="/login">
+            <div className="navLink">
+              <i className="material-icons">person</i>
+              <span>Kirjaudu sisään</span>
+            </div>
+          </Link>
         </li>
         <li>
-          <div className="navLink">
-            <i className="material-icons">logout</i>
-            <span>Kirjaudu ulos</span>
-          </div>
+          <Link to="/logout">
+            <div className="navLink">
+              <i className="material-icons">logout</i>
+              <span>Kirjaudu ulos</span>
+            </div>
+          </Link>
         </li>
       </ul>
     </nav>

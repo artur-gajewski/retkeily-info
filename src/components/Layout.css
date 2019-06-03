@@ -129,6 +129,10 @@ nav ul li .navLink {
   color: black;
 }
 
+nav ul li a {
+  text-decoration: none;
+}
+
 nav ul li .navLink span {
   overflow: hidden;
   white-space: nowrap;

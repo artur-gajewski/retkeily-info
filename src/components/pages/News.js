@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Layout from "../../components/Layout";
+import Layout from "../Layout";
 import { testReduxAction } from "../../actions/testRedux";
 
 const mapDispatchToProps = dispatch => ({
@@ -21,7 +21,7 @@ class Front extends Component {
     return (
       <Layout>
         <article>
-          <h3>Etusivu</h3>
+          <h3>Uutiset</h3>
           <div className="card">
             <button onClick={this.testRedux}>Test redux action</button>
           </div>

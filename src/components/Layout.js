@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Header from "./Header";
 import Navigation from "./Navigation";
 
-import "../App.css";
+import "./Layout.css";
 
 class Layout extends Component {
   testRedux = event => {
