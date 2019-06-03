@@ -63,6 +63,7 @@ class Navigation extends Component {
               </div>
             </Link>
           </li>
+
           {account.user && (
             <Fragment>
               <li>
@@ -98,6 +99,7 @@ class Navigation extends Component {
               </li>
             </Fragment>
           )}
+
           {!account.user && (
             <Fragment>
               <li>
