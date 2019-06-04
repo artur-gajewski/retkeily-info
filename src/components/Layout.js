@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
-import { getUserAndLogin } from "../actions/account";
+import { getUserAndLogin } from "../ducks/account";
 
 import "./Layout.css";
 

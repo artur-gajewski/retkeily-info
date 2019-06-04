@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Layout from "../Layout";
-import { getNews } from "../../actions/news";
+import { fetchNews } from "../../ducks/news";
 
 const mapDispatchToProps = dispatch => ({
-  getNews: () => dispatch(getNews())
+  getNews: () => dispatch(fetchNews())
 });
 
 const mapStateToProps = state => ({

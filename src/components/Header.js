@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { logoutUser } from "../actions/account";
+import { logoutUser } from "../ducks/account";
 import logo from "./camping.png";
 
 const mapDispatchToProps = dispatch => ({

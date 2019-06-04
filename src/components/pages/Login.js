@@ -4,7 +4,7 @@ import FacebookLogin from "react-facebook-login";
 import GoogleLogin from "react-google-login";
 
 import Layout from "../../components/Layout";
-import { loginFacebookUser, loginGoogleUser } from "../../actions/account";
+import { loginFacebookUser, loginGoogleUser } from "../../ducks/account";
 
 const mapDispatchToProps = dispatch => ({
   loginFacebookUser: account => dispatch(loginFacebookUser(account)),

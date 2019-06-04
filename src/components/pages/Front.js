@@ -2,22 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Layout from "../../components/Layout";
-import { testReduxAction } from "../../actions/testRedux";
 
-const mapDispatchToProps = dispatch => ({
-  testRedux: () => dispatch(testReduxAction())
-});
+const mapDispatchToProps = dispatch => ({});
 
 const mapStateToProps = state => ({
   ...state
 });
 
 class Front extends Component {
-  testRedux = event => {
-    this.props.testRedux();
-  };
-
   render() {
+    console.log(this.props);
     return (
       <Layout>
         <article>
@@ -26,10 +20,7 @@ class Front extends Component {
             <div>
               <h4>
                 Tervetuloa
-                {this.props.account.user
-                  ? " " + this.props.account.user.name
-                  : ""}
-                !
+                {this.props.account.user && ", " + this.props.account.user.name}
               </h4>
 
               <div>
