@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 
 class Front extends Component {
   render() {
-    console.log(this.props);
     return (
       <Layout>
         <article>
