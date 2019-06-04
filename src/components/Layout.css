@@ -50,7 +50,7 @@ header .settings {
 }
 
 header .branding {
-  flex: 0 0 256px;
+  flex: 0 0 210px;
   order: 0;
   justify-content: flex-start;
 }

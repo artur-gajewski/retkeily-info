@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { logoutUser } from "../ducks/account";
-import logo from "./camping.png";
+import logo from "./logo.png";
 
 const mapDispatchToProps = dispatch => ({
   logoutUser: () => {

@@ -6,11 +6,13 @@ import Layout from "../../components/Layout";
 const mapDispatchToProps = dispatch => ({});
 
 const mapStateToProps = state => ({
-  ...state
+  user: state.account.user
 });
 
 class Front extends Component {
   render() {
+    const { user } = this.props;
+
     return (
       <Layout>
         <article>
@@ -19,7 +21,7 @@ class Front extends Component {
             <div>
               <h4>
                 Tervetuloa
-                {this.props.account.user && ", " + this.props.account.user.name}
+                {user && ", " + user.name}
               </h4>
 
               <div>
