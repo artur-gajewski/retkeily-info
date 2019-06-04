@@ -2,7 +2,7 @@ import thunkMiddleware from "redux-thunk";
 import promiseMiddleware from "redux-promise-middleware";
 import { combineReducers, applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
-import * as ducks from "./ducks";
+import * as ducks from "../ducks";
 
 const enhancers = [];
 const middlewares = [thunkMiddleware, promiseMiddleware];

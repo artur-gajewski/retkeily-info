@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import configureStore from "./store";
+import configureStore from "./config/store";
 
 import Front from "./components/pages/Front";
 import Login from "./components/pages/Login";
 import News from "./components/pages/News";
 import PageNotFound from "./components/pages/NotFound";
 
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from "./config/serviceWorker";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
