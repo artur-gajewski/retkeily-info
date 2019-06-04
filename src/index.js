@@ -13,6 +13,8 @@ import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+require("dotenv").config({ path: ".env.development.local" });
+
 ReactDOM.render(
   <Provider store={configureStore()}>
     <Router>
