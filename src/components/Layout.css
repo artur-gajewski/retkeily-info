@@ -213,6 +213,14 @@ article {
   display: none;
 }
 
+.form-note {
+  margin-bottom: 20px;
+}
+
+.form-validation-error {
+  color: red;
+}
+
 .select-box {
   z-index: 10000;
 }

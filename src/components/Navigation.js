@@ -20,7 +20,7 @@ class Navigation extends Component {
   };
 
   handleLogout = () => {
-    this.props.onClickMenu();
+    window.scrollTo(0, 0);
     this.props.logoutUser();
     this.setState(() => ({
       redirectToFrontPage: true
