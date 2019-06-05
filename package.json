@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "node api"
+    "api": "node api",
+    "deploy": "scp -r build/* root@arturgajewski.com:/var/www/retkeily.info/"
   },
   "eslintConfig": {
     "extends": "react-app"
