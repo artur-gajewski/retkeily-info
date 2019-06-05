@@ -22,7 +22,9 @@ class Front extends Component {
     return (
       <Layout>
         <article>
-          <h3>Tiedotteet</h3>
+          <div className="page-title-container">
+            <h3>Tiedotteet</h3>
+          </div>
           {news &&
             news.map(newsPost => (
               <div key={newsPost.id} className="card">

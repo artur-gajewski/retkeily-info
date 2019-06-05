@@ -25,12 +25,22 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  letter-spacing: 2px;
   font-size: 20px;
   margin-top: 10px;
 }
 
 h4 {
   margin-top: 0px;
+}
+
+.page-title-container {
+  height: 150px;
+  background: url("./banner.jpg");
+  background-size: "cover";
+  color: #fff;
+  padding: 10px;
+  padding-left: 20px;
 }
 
 header {
@@ -251,6 +261,10 @@ article {
 
   .topBar nav {
     display: block;
+  }
+
+  .page-title-container {
+    height: 110px;
   }
 }
 

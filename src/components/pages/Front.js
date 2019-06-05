@@ -16,7 +16,9 @@ class Front extends Component {
     return (
       <Layout>
         <article>
-          <h3>Etusivu</h3>
+          <div className="page-title-container">
+            <h3>Etusivu</h3>
+          </div>
           <div className="card">
             <div>
               <h4>
