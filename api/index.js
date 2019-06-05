@@ -31,5 +31,15 @@ router.post("/news", (req, res) => {
   });
 });
 
+router.get("/parks", (req, res) => {
+  sql.query("SELECT * FROM parks ORDER BY title", function(err, results) {
+    if (err) {
+      res.status(400);
+      res.send("Error fetching parks");
+    }
+    return res.json(results);
+  });
+});
+
 app.use("/v1", router);
 app.listen(API_PORT, () => console.log(`API running on port ${API_PORT}!`));
