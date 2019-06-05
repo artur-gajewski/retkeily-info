@@ -26,6 +26,7 @@ class Front extends Component {
             <h3>Tiedotteet</h3>
           </div>
           {news &&
+            typeof news === "object" &&
             news.map(newsPost => (
               <div key={newsPost.id} className="card">
                 {newsPost.content}
