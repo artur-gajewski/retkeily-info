@@ -48,7 +48,7 @@ class Navigation extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/news">
+            <Link to="/news" onClick={onClickMenu}>
               <div className="navLink">
                 <i className="material-icons">assignment</i>
                 <span>Tiedotteet</span>
@@ -56,7 +56,7 @@ class Navigation extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/events">
+            <Link to="/events" onClick={onClickMenu}>
               <div className="navLink">
                 <i className="material-icons">event_available</i>
                 <span>Tapahtumat</span>
@@ -67,7 +67,7 @@ class Navigation extends Component {
           {account.user && (
             <Fragment>
               <li>
-                <Link to="/me">
+                <Link to="/me" onClick={onClickMenu}>
                   <div className="navLink">
                     <i className="material-icons">location_on</i>
                     <span>Ilmoita sijaintisi</span>
@@ -75,7 +75,7 @@ class Navigation extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/friends">
+                <Link to="/friends" onClick={onClickMenu}>
                   <div className="navLink">
                     <i className="material-icons">people</i>
                     <span>Kaverilista</span>
@@ -83,7 +83,7 @@ class Navigation extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/favorites">
+                <Link to="/favorites" onClick={onClickMenu}>
                   <div className="navLink">
                     <i className="material-icons">bookmark</i>
                     <span>Suosikit</span>
@@ -103,7 +103,7 @@ class Navigation extends Component {
           {!account.user && (
             <Fragment>
               <li>
-                <Link to="/login">
+                <Link to="/login" onClick={onClickMenu}>
                   <div className="navLink">
                     <i className="material-icons">person</i>
                     <span>Kirjaudu sisään</span>
