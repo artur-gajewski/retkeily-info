@@ -213,6 +213,17 @@ article {
   display: none;
 }
 
+.select-box {
+  z-index: 10000;
+}
+.select-box input {
+  height: 40px;
+}
+
+.form-controls {
+  margin-top: 20px;
+}
+
 @media (min-width: 600px) {
   .branding {
     padding: 0 24px;

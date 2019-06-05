@@ -32,13 +32,16 @@ router.post("/news", (req, res) => {
 });
 
 router.get("/parks", (req, res) => {
-  sql.query("SELECT * FROM parks ORDER BY title", function(err, results) {
-    if (err) {
-      res.status(400);
-      res.send("Error fetching parks");
+  sql.query(
+    'SELECT slug as "value", title as "label" FROM parks ORDER BY title',
+    function(err, results) {
+      if (err) {
+        res.status(400);
+        res.send("Error fetching parks");
+      }
+      return res.json(results);
     }
-    return res.json(results);
-  });
+  );
 });
 
 app.use("/v1", router);
