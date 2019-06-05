@@ -58,6 +58,7 @@ header .branding {
 header .branding img {
   max-height: 32px;
   max-width: 175px;
+  margin-top: 10px;
 }
 
 header .page-details {
@@ -76,9 +77,10 @@ header .page-details .title {
 }
 
 header .settings {
-  flex: 0 0 256px;
+  flex: 0 0 56px;
   order: 2;
   justify-content: flex-end;
+  padding-right: 10px;
 }
 
 header .account-picture {
@@ -87,6 +89,15 @@ header .account-picture {
 }
 
 .menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+}
+
+.header-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,29 +195,46 @@ article {
   margin-bottom: 24px;
 }
 
-@media (min-width: 800px) {
+.topBar nav {
+  display: none;
+}
+
+@media (min-width: 600px) {
   .branding {
     padding: 0 24px;
+    height: 52px;
   }
 
   nav .title-block {
     display: none;
   }
+
+  .menu-button {
+    display: none;
+  }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   header .branding img {
     padding: 0 24px;
+    display: none;
   }
 
-  header .branding,
-  header .settings {
+  header .branding {
     flex: 0 0 64px;
   }
 
+  header .profile {
+    display: none;
+  }
+
   header .page-details {
-    padding: 0 24px;
+    padding: 0 25px;
     justify-content: center;
+  }
+
+  header .page-details .title {
+    font-size: 15px;
   }
 
   article {
@@ -217,13 +245,17 @@ article {
     margin-bottom: 16px;
   }
 
-  nav {
-    flex: 0 0 66px;
-    display: block;
-    overflow: auto;
+  .sideBar nav {
+    display: none;
   }
 
-  nav ul li .navLink span {
+  .topBar nav {
+    display: block;
+  }
+}
+
+@media (max-width: 350px) {
+  header .settings {
     display: none;
   }
 }

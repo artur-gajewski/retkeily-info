@@ -25,7 +25,9 @@ class Layout extends Component {
       <Fragment>
         <Header />
         <div className="app">
-          <Navigation />
+          <div className="sideBar">
+            <Navigation />
+          </div>
           {this.props.children}
         </div>
       </Fragment>

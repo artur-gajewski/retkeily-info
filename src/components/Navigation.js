@@ -27,7 +27,7 @@ class Navigation extends Component {
   };
 
   render() {
-    const { account } = this.props;
+    const { account, onClickMenu } = this.props;
 
     if (this.state.redirectToFrontPage === true) {
       this.setState(() => ({
@@ -40,7 +40,7 @@ class Navigation extends Component {
       <nav>
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/" onClick={onClickMenu}>
               <div className="navLink">
                 <i className="material-icons">home</i>
                 <span>Etusivu</span>
