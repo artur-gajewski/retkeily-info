@@ -213,6 +213,24 @@ article {
   display: none;
 }
 
+.new-entry-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.flash-success {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 20px;
+  color: #008000;
+  background-color: #d9f5df;
+}
+
+.form-card {
+  margin-top: 20px;
+}
+
 .form-note {
   margin-bottom: 20px;
 }
@@ -224,6 +242,7 @@ article {
 .select-box {
   z-index: 10000;
 }
+
 .select-box input {
   height: 40px;
 }
@@ -284,6 +303,7 @@ article {
 
   .topBar nav {
     display: block;
+    border-bottom: 1px solid #d9d9d9;
   }
 
   .page-title-container {

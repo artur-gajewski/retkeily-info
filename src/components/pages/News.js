@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Select from "react-select";
+import FlashMassage from "react-flash-message";
+import Moment from "react-moment";
+import "moment/locale/fi";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -8,11 +11,12 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 import Layout from "../Layout";
-import { fetchNews } from "../../ducks/news";
+import { createNews, fetchNews } from "../../ducks/news";
 import { fetchParks } from "../../ducks/parks";
 
 const mapDispatchToProps = dispatch => ({
   getNews: () => dispatch(fetchNews()),
+  addNews: values => dispatch(createNews(values)),
   getParks: () => dispatch(fetchParks())
 });
 
@@ -25,11 +29,12 @@ const mapStateToProps = state => ({
 class Front extends Component {
   state = {
     selectedOption: null,
-    showNewsForm: false
+    showNewsForm: false,
+    showFlashMessage: false
   };
 
   handleShowForm = () => {
-    this.setState({ showNewsForm: true });
+    this.setState({ showNewsForm: true, showFlashMessage: false });
   };
 
   handleChangePark = selectedOption => {
@@ -43,8 +48,8 @@ class Front extends Component {
   }
 
   render() {
-    const { news, parks, user } = this.props;
-    const { selectedOption, showNewsForm } = this.state;
+    const { news, parks, user, addNews, getNews } = this.props;
+    const { selectedOption, showNewsForm, showFlashMessage } = this.state;
 
     return (
       <Layout>
@@ -54,13 +59,23 @@ class Front extends Component {
           </div>
 
           {!showNewsForm && user && (
-            <Button onClick={this.handleShowForm} variant="contained">
-              Lähetä tiedote
-            </Button>
+            <div className="new-entry-button">
+              <Button onClick={this.handleShowForm} variant="contained">
+                Lähetä tiedote
+              </Button>
+            </div>
+          )}
+
+          {showFlashMessage && (
+            <FlashMassage duration={5000} persistOnHover={true}>
+              <div className="flash-success">
+                <p>Tiedote tallennettu.</p>
+              </div>
+            </FlashMassage>
           )}
 
           {showNewsForm && (
-            <div className="card">
+            <div className="card form-card">
               <h4>Uusi tiedote</h4>
               <div className="form">
                 <Formik
@@ -70,18 +85,22 @@ class Front extends Component {
                     content: ""
                   }}
                   onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                      values.park = this.state.selectedOption
-                        ? this.state.selectedOption.value
-                        : "";
-                      alert(JSON.stringify(values, null, 2));
-                      this.props.getNews();
-                      setSubmitting(false);
-                      this.setState({
-                        selectedOption: null,
-                        showNewsForm: false
-                      });
-                    }, 500);
+                    values.author = this.props.user.id;
+                    values.park = this.state.selectedOption
+                      ? this.state.selectedOption.value
+                      : "";
+
+                    addNews(values).then(() => {
+                      getNews();
+                    });
+
+                    setSubmitting(false);
+
+                    this.setState({
+                      selectedOption: null,
+                      showNewsForm: false,
+                      showFlashMessage: true
+                    });
                   }}
                   validationSchema={Yup.object().shape({
                     content: Yup.string().required("Required")
@@ -102,7 +121,7 @@ class Front extends Component {
                       <form onSubmit={handleSubmit}>
                         {!selectedOption && (
                           <div className="form-note">
-                            Valitse ensin kansallisupuisto tai muu ulkoilualue.
+                            Valitse ensin kansallispuisto tai muu ulkoilualue.
                           </div>
                         )}
                         {selectedOption && (
@@ -187,6 +206,18 @@ class Front extends Component {
             typeof news === "object" &&
             news.map(newsPost => (
               <div key={newsPost.id} className="card">
+                {newsPost.author}
+                <br />
+                <Moment locale="fi" format="LLL">
+                  {newsPost.created_at}
+                </Moment>
+                <br />
+                {newsPost.park}
+                <br />
+                {newsPost.trail}
+                <br />
+                {newsPost.area}
+                <br />
                 {newsPost.content}
               </div>
             ))}

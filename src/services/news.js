@@ -10,5 +10,10 @@ export default {
       .catch(function(error) {
         return null;
       });
+  },
+  addNews: async data => {
+    return axios.post(`${REACT_APP_API_URL}/news`, data).catch(function(error) {
+      return null;
+    });
   }
 };

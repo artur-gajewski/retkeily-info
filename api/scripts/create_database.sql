@@ -5,8 +5,6 @@ use retkeily_info;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL,
   `author` varchar(200) NOT NULL,
-  `avatar` varchar(500) NOT NULL,
-  `email` varchar(200) NOT NULL,
   `park` varchar(200) NOT NULL,
   `trail` varchar(200) NOT NULL,
   `area` varchar(200) NOT NULL,
