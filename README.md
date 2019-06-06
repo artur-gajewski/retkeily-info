@@ -35,6 +35,12 @@ Populate database:
 $ yarn db-populate
 ```
 
+To access container bash shell:
+
+```
+$ yarn db-ssh
+```
+
 If you ever need to delete container:
 
 ```

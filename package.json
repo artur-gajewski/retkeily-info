@@ -33,7 +33,8 @@
     "db-populate": "docker exec -it retkeily_info mysql -uroot -pretkeily123 -e \"$(cat api/scripts/create_database.sql)\"",
     "db-delete": "docker stop retkeily_info && docker rm retkeily_info",
     "db-ssh": "docker exec -it retkeily_info bash",
-    "deploy": "scp -r build/* root@arturgajewski.com:/var/www/retkeily.info/"
+    "deploy-app": "scp -r build/* root@arturgajewski.com:/var/www/retkeily.info/",
+    "deploy-api": "scp -r api/* root@arturgajewski.com:/var/www/retkeily.info/api/"
   },
   "eslintConfig": {
     "extends": "react-app"
