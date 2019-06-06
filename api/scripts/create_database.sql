@@ -1,7 +1,3 @@
-CREATE DATABASE retkeily_info;
-
-use retkeily_info;
-
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL,
   `author` varchar(200) NOT NULL,
@@ -14,8 +10,6 @@ CREATE TABLE IF NOT EXISTS `news` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
- 
- 
 ALTER TABLE `news` ADD PRIMARY KEY (`id`);
 ALTER TABLE `news` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 

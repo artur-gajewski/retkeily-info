@@ -29,6 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "api": "node api",
+    "db": "docker run --name retkeily_info -p 3333:3306 -e MYSQL_ROOT_PASSWORD=retkeily123 -d mariadb/server:10.3",
+    "docker": "docker exec -it retkeily_info bash",
     "deploy": "scp -r build/* root@arturgajewski.com:/var/www/retkeily.info/"
   },
   "eslintConfig": {

@@ -5,6 +5,8 @@ Portal for hikers to inform other hikers about trail conditions and events.
 ## Prerequisites
 
 - Yarn
+- Docker
+- MariaDB (for initializing database remotely)
 - Strong recommendation for an IDE: VSCode
 
 ### Recommended VSCode plugins:
@@ -21,6 +23,18 @@ $ cp .env.example .env.development.local
 ```
 
 ## Development
+
+To create Docker container for database:
+
+```
+$ yarn db
+```
+
+Initialize database:
+
+```
+$ mysql -h 127.0.0.1 -P 3333 -u root -p -D retkeily_info < api/scripts/create_database.sql
+```
 
 To start development, run:
 
