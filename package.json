@@ -29,8 +29,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "api": "node api",
-    "db": "docker run --name retkeily_info -p 3333:3306 -e MYSQL_ROOT_PASSWORD=retkeily123 -d mariadb/server:10.3",
-    "docker": "docker exec -it retkeily_info bash",
+    "db-create": "docker run --name retkeily_info -p 3333:3306 -e MYSQL_ROOT_PASSWORD=retkeily123 -d mariadb/server:10.3 --character-set-server=utf8mb4 --collation-server=utf8mb4_swedish_ci --skip-character-set-client-handshake",
+    "db-populate": "docker exec -it retkeily_info mysql -uroot -pretkeily123 -e \"$(cat api/scripts/create_database.sql)\"",
+    "db-delete": "docker stop retkeily_info && docker rm retkeily_info",
+    "db-ssh": "docker exec -it retkeily_info bash",
     "deploy": "scp -r build/* root@arturgajewski.com:/var/www/retkeily.info/"
   },
   "eslintConfig": {

@@ -1,3 +1,7 @@
+﻿CREATE DATABASE retkeily_info CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci;
+
+use retkeily_info;
+
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL,
   `author` varchar(200) NOT NULL,
@@ -8,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `area` varchar(200) NOT NULL,
   `content` text(5000) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+);
 
 ALTER TABLE `news` ADD PRIMARY KEY (`id`);
 ALTER TABLE `news` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
@@ -17,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `parks` (
   `id` int(11) NOT NULL,
   `slug` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+);
 
 ALTER TABLE `parks` ADD PRIMARY KEY (`id`);
 ALTER TABLE `parks` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
