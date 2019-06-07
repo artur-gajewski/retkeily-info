@@ -206,19 +206,36 @@ class Front extends Component {
             typeof news === "object" &&
             news.map(newsPost => (
               <div key={newsPost.id} className="card">
-                {newsPost.author}
-                <br />
-                <Moment locale="fi" format="LLL">
-                  {newsPost.created_at}
-                </Moment>
-                <br />
-                {newsPost.park}
-                <br />
-                {newsPost.trail}
-                <br />
-                {newsPost.area}
-                <br />
-                {newsPost.content}
+                <div className="post-container">
+                  <div className="left">
+                    <div className="author">{newsPost.author}</div>
+                    <div className="timestamp">
+                      <div className="post-data">
+                        <i className="material-icons">date_range</i>
+                        <Moment locale="fi" format="LL">
+                          {newsPost.created_at}
+                        </Moment>
+                      </div>
+                      <div className="post-data">
+                        <i className="material-icons">access_time</i>
+                        <Moment locale="fi" format="LT">
+                          {newsPost.created_at}
+                        </Moment>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="right">
+                    <div className="park">{newsPost.park}</div>
+                    <div className="trail-area">
+                      {newsPost.trail}, {newsPost.area}
+                    </div>
+                    <div className="content">
+                      {newsPost.content.split("\n").map((text, key) => {
+                        return <p key={key}>{text}</p>;
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
         </article>
