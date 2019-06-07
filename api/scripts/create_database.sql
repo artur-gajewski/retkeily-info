@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(200) NOT NULL,
-  `avatar` varchar(500) NOT NULL,
+  `avatar` varchar(500),
   `email` varchar(200) NOT NULL,
   `park` varchar(200) NOT NULL,
   `trail` varchar(200) NOT NULL,
