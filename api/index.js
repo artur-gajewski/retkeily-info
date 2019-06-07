@@ -4,7 +4,8 @@ const cors = require("cors");
 const sql = require("./db");
 
 require("dotenv").config({ path: ".env.development.local" });
-const { API_PORT } = process.env;
+//const { API_PORT } = process.env;
+const API_PORT = 3001;
 
 const app = express();
 app.use(cors());

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const { REACT_APP_API_URL } = process.env;
+//const { REACT_APP_API_URL } = process.env;
+const REACT_APP_API_URL = "http://api.retkeily.info";
 
 export default {
   convertFacebookData: account => {
