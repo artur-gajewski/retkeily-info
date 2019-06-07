@@ -85,7 +85,7 @@ class Front extends Component {
                     content: ""
                   }}
                   onSubmit={(values, { setSubmitting }) => {
-                    values.author = this.props.user.id;
+                    values.author = this.props.user.external_id;
                     values.park = this.state.selectedOption
                       ? this.state.selectedOption.value
                       : "";
@@ -208,6 +208,9 @@ class Front extends Component {
               <div key={newsPost.id} className="card">
                 <div className="post-container">
                   <div className="left">
+                    <div className="picture">
+                      <img alt="avatar" src={newsPost.picture_url} />
+                    </div>
                     <div className="author">{newsPost.author}</div>
                     <div className="timestamp">
                       <div className="post-data">

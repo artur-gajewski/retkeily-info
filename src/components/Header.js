@@ -78,7 +78,7 @@ class Header extends Component {
                 <img
                   alt="avatar"
                   className="account-picture"
-                  src={this.props.account.user.pictureUrl}
+                  src={this.props.account.user.picture_url}
                 />
                 <div
                   className="header-button profile"

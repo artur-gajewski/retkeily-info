@@ -17,9 +17,28 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
+router.post("/accounts", (req, res) => {
+  const data = req.body;
+  sql.query(
+    "SELECT * FROM accounts WHERE external_id = ?",
+    data.external_id,
+    function(err, results) {
+      if (results.length === 0) {
+        sql.query("INSERT INTO accounts SET ?", data, function(err, results) {
+          if (err) {
+            res.status(400);
+            res.send("Error inserting account: " + err.message);
+          }
+          return res.json(results);
+        });
+      }
+    }
+  );
+});
+
 router.get("/news", (req, res) => {
   sql.query(
-    "SELECT n.author, p.title as park, n.trail, n.area, n.content, n.created_at FROM news n, parks p WHERE p.slug = n.park ORDER BY created_at DESC",
+    "SELECT a.name as author, a.picture_url, p.title as park, n.trail, n.area, n.content, n.created_at FROM accounts a, news n, parks p WHERE a.external_id = n.author and p.slug = n.park ORDER BY created_at DESC",
     function(err, results) {
       if (err) {
         res.status(400);

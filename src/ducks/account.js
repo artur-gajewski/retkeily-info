@@ -4,12 +4,14 @@ import accountService from "../services/account";
 export const loginFacebookUser = createAction(
   "LOGIN_FACEBOOK_USER",
   account => {
-    return accountService.convertFacebookData(account);
+    const data = accountService.convertFacebookData(account);
+    return accountService.addAccount(data).then(data);
   }
 );
 
 export const loginGoogleUser = createAction("LOGIN_GOOGLE_USER", account => {
-  return accountService.convertGoogleData(account);
+  const data = accountService.convertGoogleData(account);
+  return accountService.addAccount(data).then(data);
 });
 
 export const getUserAndLogin = createAction("GET_USER_AND_LOGIN", () => {

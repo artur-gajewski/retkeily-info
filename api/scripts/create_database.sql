@@ -9,6 +9,20 @@
 create database retkeily_info;
 use retkeily_info;
 
+# Create users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `accounts`;
+
+CREATE TABLE `accounts` (
+  `external_id` varchar(200) NOT NULL,
+  `name` varchar(200) not null,
+  `email` varchar(200) not null,
+  `picture_url` varchar(500),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`external_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 # Create news
 # ------------------------------------------------------------
 
@@ -17,8 +31,6 @@ DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(200) NOT NULL,
-  `avatar` varchar(500),
-  `email` varchar(200),
   `park` varchar(200) NOT NULL,
   `trail` varchar(200),
   `area` varchar(200),

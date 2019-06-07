@@ -249,6 +249,11 @@ article {
   min-width: 200px;
 }
 
+.post-container .left .picture img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
 .post-container .left .timestamp {
   display: flex;
   flex-direction: column;
@@ -341,10 +346,6 @@ article {
     justify-content: center;
   }
 
-  header .page-details .title {
-    font-size: 15px;
-  }
-
   article {
     padding: 16px;
   }
@@ -368,11 +369,7 @@ article {
 
   .post-container {
     display: flex;
-    flex-direction: column;
-  }
-
-  .post-container .left {
-    width: 100%;
+    flex-direction: row;
   }
 
   .post-container .left .post-data {
@@ -383,15 +380,34 @@ article {
     margin: 0px;
   }
 
-  .post-container .right {
-    width: 100%;
+  .post-container .left {
+    min-width: 180px;
   }
 
   .post-container .left .timestamp {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    width: 300px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-container {
+    flex-direction: column;
+  }
+
+  .post-container .left .picture {
+    display: none;
+  }
+
+  .post-container .left .timestamp {
+    flex-direction: row;
+    width: 290px;
+  }
+
+  .post-container .right {
+    width: 100%;
   }
 }
 

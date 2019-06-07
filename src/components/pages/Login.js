@@ -40,6 +40,7 @@ class Front extends Component {
               appId="367842327192175"
               autoLoad={false}
               fields="name,email,picture"
+              size="metro"
               callback={this.responseFacebook}
             />
 
